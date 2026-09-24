@@ -1,0 +1,551 @@
+{
+  "site": {
+    "key": "site",
+    "label": "Site Buyer",
+    "role": "Site Buyer",
+    "title": "Your job, today",
+    "scope": "LDM02128",
+    "scopeSub": "Chennai Metro Package C4 · one job, one warehouse · WH-CHN-03",
+    "kpis": [
+      {
+        "label": "Needs you now",
+        "value": "6",
+        "sub": "oldest 3 d",
+        "note": "2 past SLA",
+        "noteTone": "red"
+      },
+      {
+        "label": "Value at stake",
+        "value": "₹1.09 Cr",
+        "sub": "across those 6 items"
+      },
+      {
+        "label": "My drafts",
+        "value": "5",
+        "sub": "₹68.4 L",
+        "note": "1 blocked",
+        "noteTone": "amber"
+      },
+      {
+        "label": "Budget free",
+        "value": "₹42.6 L",
+        "sub": "Steel & Rebar head"
+      },
+      {
+        "label": "My turnaround",
+        "value": "1.4 d",
+        "sub": "against a 2 d SLA",
+        "progress": 72,
+        "progressColor": "#1E7F4F"
+      }
+    ],
+    "actions": [
+      {
+        "id": "s1",
+        "icon": "ret",
+        "tone": "red",
+        "title": "PR returned — needs revision",
+        "ref": "PRC/2026/0041790",
+        "sub": "Shuttering Plywood 12mm",
+        "age": "3 d old",
+        "value": "₹18,40,000",
+        "cta": "Revise here",
+        "flag": "SLA breached",
+        "flagTone": "red",
+        "why": "R. Krishnan returned it three days ago: line 2 asks for 12 mm plywood where the approved BBS says 16 mm. Nothing else was queried.",
+        "offer": "I can correct line 2 to 16 mm, keep the quantity and need-by date as they are, and re-raise it against the same budget head.",
+        "done": "Re-raised. EIP returned PRC/2026/0041934 and it is back with R. Krishnan — level 1 cleared automatically because only the specification changed."
+      },
+      {
+        "id": "s2",
+        "icon": "warn",
+        "tone": "red",
+        "title": "Draft blocked on budget",
+        "ref": "PRC/2026/0041866",
+        "sub": "Steel & Rebar short by ₹26.4 L",
+        "age": "2 d old",
+        "value": "₹26,40,000",
+        "cta": "Fix here",
+        "flag": "Submit disabled",
+        "flagTone": "amber",
+        "why": "The Steel & Rebar head on this job has ₹42.6 L free against ₹69.0 L of open drafts, so this one cannot submit. Nothing about the draft itself is wrong.",
+        "offer": "Short-closing PRC/2026/0039660 releases ₹28.2 L — its balance 28 MT is no longer required. That clears this draft without going to Finance.",
+        "done": "Short-closed through the API. ₹28.2 L is back on the head and PRC/2026/0041866 can now submit."
+      },
+      {
+        "id": "s3",
+        "icon": "clock",
+        "tone": "amber",
+        "title": "2 RFQs close today",
+        "ref": "RFQ/2026/0009363",
+        "sub": "+1 · 5 invited, 3 quoted",
+        "age": "closes 17:00",
+        "value": "₹41,20,000",
+        "cta": "Review quotes",
+        "flag": "Today",
+        "flagTone": "amber"
+      },
+      {
+        "id": "s4",
+        "icon": "ret",
+        "tone": "amber",
+        "title": "TCD returned for correction",
+        "ref": "TCD/2026/0004120",
+        "sub": "landed-cost basis queried on 2 lines",
+        "age": "1 d old",
+        "value": "₹12,45,000",
+        "cta": "Correct here"
+      },
+      {
+        "id": "s5",
+        "icon": "mail",
+        "tone": "red",
+        "title": "3 vendor responses overdue",
+        "ref": "RFQ/2026/0009301",
+        "sub": "Sunrise Steel Traders +2",
+        "age": "2 d old",
+        "value": "₹8,90,000",
+        "cta": "Chase vendors",
+        "flag": "SLA breached",
+        "flagTone": "red"
+      },
+      {
+        "id": "s6",
+        "icon": "cube",
+        "tone": "blue",
+        "title": "PO amendment awaiting your input",
+        "ref": "PO/2026/0028104",
+        "sub": "delivery date revised by vendor",
+        "age": "1 d old",
+        "value": "₹2,05,000",
+        "cta": "Review change"
+      }
+    ],
+    "insights": [
+      {
+        "priority": "P1",
+        "icon": "surplus",
+        "tone": "blue",
+        "title": "Surplus covers 76% of your open draft",
+        "body": "38 MT TMT Bar Fe500D 12mm sits at WH-HYD-01, 42 km by road. A transfer beats a fresh purchase on both landed cost and the need-by date.",
+        "metricLabel": "Potential saving",
+        "metricValue": "₹1,46,000",
+        "metricTone": "green",
+        "cta": "Raise transfer",
+        "intent": "create"
+      },
+      {
+        "priority": "P2",
+        "icon": "expiry",
+        "tone": "amber",
+        "title": "Near-expiry stock on your job",
+        "body": "12 MT OPC 53 Cement at WH-CHN-01 expires in 26 days. The pour schedule can absorb 8 MT if it moves this week.",
+        "metricLabel": "Value at risk",
+        "metricValue": "₹3,12,000",
+        "metricTone": "amber",
+        "cta": "Raise transfer",
+        "intent": "create"
+      },
+      {
+        "priority": "P3",
+        "icon": "money",
+        "tone": "red",
+        "title": "One draft is blocked on budget",
+        "body": "PRC/2026/0041866 cannot submit. Short-closing a stalled request on the same head releases more than enough to clear it.",
+        "metricLabel": "Blocked value",
+        "metricValue": "₹26,40,000",
+        "metricTone": "red",
+        "cta": "Fix here",
+        "intent": "res"
+      },
+      {
+        "priority": "P4",
+        "icon": "rate",
+        "tone": "amber",
+        "title": "Indicative rate 4.2% above last purchase",
+        "body": "TMT Bar Fe500D 16mm quoted at ₹52,400/MT against ₹50,290/MT on 14 Aug. Worth testing at RFQ before award.",
+        "metricLabel": "Exposure",
+        "metricValue": "₹1,72,000",
+        "metricTone": "amber",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      },
+      {
+        "priority": "P5",
+        "icon": "vendor",
+        "tone": "blue",
+        "title": "3 invited vendors have not quoted",
+        "body": "RFQ/2026/0009301 closes in two days. Reminders reach the registered email only, so a call may be faster.",
+        "metricLabel": "Value at risk",
+        "metricValue": "₹8,90,000",
+        "metricTone": "amber",
+        "cta": "Chase vendors",
+        "intent": "res"
+      }
+    ]
+  },
+  "cat": {
+    "key": "cat",
+    "label": "Category Manager",
+    "role": "Category Manager",
+    "title": "Steel & Rebar, across your jobs",
+    "scope": "Steel & Rebar",
+    "scopeSub": "12 jobs · South cluster · Central purchase group",
+    "kpis": [
+      {
+        "label": "Open value",
+        "value": "₹4.82 Cr",
+        "sub": "12 jobs in category"
+      },
+      {
+        "label": "Awaiting allocation",
+        "value": "9",
+        "sub": "oldest 4 d",
+        "note": "3 ageing",
+        "noteTone": "amber"
+      },
+      {
+        "label": "RFQs live",
+        "value": "7",
+        "sub": "38 vendors invited",
+        "note": "2 close today",
+        "noteTone": "amber"
+      },
+      {
+        "label": "Rate vs benchmark",
+        "value": "+3.4%",
+        "sub": "12mm TMT · 30 d"
+      },
+      {
+        "label": "Saving found",
+        "value": "₹18.6 L",
+        "sub": "90 d · 14 actioned"
+      }
+    ],
+    "actions": [
+      {
+        "id": "c1",
+        "icon": "alloc",
+        "tone": "amber",
+        "title": "9 PRs awaiting allocation",
+        "ref": "Steel & Rebar",
+        "sub": "7 jobs · 3 older than 2 days",
+        "age": "oldest 4 d",
+        "value": "₹1,86,40,000",
+        "cta": "Allocate here",
+        "flag": "Ageing",
+        "flagTone": "amber",
+        "why": "Nine requests across seven jobs are unallocated in your category. Three have waited more than two days, and two of those sit on jobs with a need-by inside ten days.",
+        "offer": "I can group them the way they would buy best — four TMT requests into one RFQ at 1.42× volume, the rest routed to the cluster buyers who already hold those jobs.",
+        "done": "Allocated. Four requests merged into RFQ/2026/0009402 and five routed to cluster buyers, all written to EIP through the API."
+      },
+      {
+        "id": "c2",
+        "icon": "clock",
+        "tone": "amber",
+        "title": "2 RFQs close today",
+        "ref": "RFQ/2026/0009363",
+        "sub": "12 vendors invited across both",
+        "age": "closes 17:00",
+        "value": "₹41,20,000",
+        "cta": "Review quotes",
+        "flag": "Today",
+        "flagTone": "amber",
+        "why": "Both close at 17:00. One has three of five quotes in, the other two of seven — and the second is the 16mm award that blocks two jobs.",
+        "offer": "I can extend the weaker one by 24 hours and send a final reminder to the four who have opened but not quoted.",
+        "done": "Extended to tomorrow 17:00 and reminders sent. Both changes are on the RFQ audit trail in EIP."
+      },
+      {
+        "id": "c3",
+        "icon": "ret",
+        "tone": "red",
+        "title": "TCC deviation needs your note",
+        "ref": "TCC/2026/0002214",
+        "sub": "L1 not recommended on the 16mm award",
+        "age": "2 d old",
+        "value": "₹34,50,000",
+        "cta": "Add note here",
+        "flag": "Blocks award",
+        "flagTone": "red"
+      },
+      {
+        "id": "c4",
+        "icon": "cons",
+        "tone": "blue",
+        "title": "4 requests could be consolidated",
+        "ref": "LDM03390 +2",
+        "sub": "same category · 1.42× volume",
+        "age": "5 d old",
+        "value": "₹6,20,000",
+        "cta": "Merge here"
+      },
+      {
+        "id": "c5",
+        "icon": "rate",
+        "tone": "amber",
+        "title": "Rate 4.2% above last purchase on 3 jobs",
+        "ref": "TMT Fe500D 16mm",
+        "sub": "commodity feed trending up",
+        "age": "1 d old",
+        "value": "₹5,16,000",
+        "cta": "Ask Buddy"
+      },
+      {
+        "id": "c6",
+        "icon": "mail",
+        "tone": "blue",
+        "title": "2 vendors pending empanelment renewal",
+        "ref": "VEN-0028117 +1",
+        "sub": "cannot receive orders after 30 Sep",
+        "age": "6 d old",
+        "value": "₹28,40,000",
+        "cta": "Chase here"
+      }
+    ],
+    "insights": [
+      {
+        "priority": "P1",
+        "icon": "cons",
+        "tone": "blue",
+        "title": "Four requests could buy as one",
+        "body": "Same category, same window, 1.42× volume and a single freight leg instead of three. One RFQ replaces four.",
+        "metricLabel": "Potential saving",
+        "metricValue": "₹6,20,000",
+        "metricTone": "green",
+        "cta": "Merge here",
+        "intent": "res"
+      },
+      {
+        "priority": "P2",
+        "icon": "rate",
+        "tone": "amber",
+        "title": "16mm quoted above benchmark on 3 jobs",
+        "body": "₹52,400/MT against a ₹50,290/MT benchmark. The same two vendors are behind all three quotes.",
+        "metricLabel": "Exposure",
+        "metricValue": "₹5,16,000",
+        "metricTone": "amber",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      },
+      {
+        "priority": "P3",
+        "icon": "vendor",
+        "tone": "red",
+        "title": "One vendor holds 68% of category spend",
+        "body": "Sunrise Steel Traders is on 9 of 13 live orders. Two empanelled alternatives have not been invited in 90 days.",
+        "metricLabel": "Concentration",
+        "metricValue": "68%",
+        "metricTone": "red",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      },
+      {
+        "priority": "P4",
+        "icon": "surplus",
+        "tone": "blue",
+        "title": "Surplus pool across four jobs",
+        "body": "64 MT of rebar idle at three warehouses while four jobs hold open drafts for the same grade.",
+        "metricLabel": "Potential saving",
+        "metricValue": "₹4,80,000",
+        "metricTone": "green",
+        "cta": "Raise transfer",
+        "intent": "create"
+      },
+      {
+        "priority": "P5",
+        "icon": "money",
+        "tone": "blue",
+        "title": "No rate contract covers 12mm rebar",
+        "body": "MAT-1000482 has run on spot quotes all year. Central finalises steel contracts annually and the next window opens in November.",
+        "metricLabel": "Annual volume",
+        "metricValue": "₹6.4 Cr",
+        "metricTone": "blue",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      }
+    ]
+  },
+  "head": {
+    "key": "head",
+    "label": "SCM Head",
+    "role": "Head–SCM, South",
+    "title": "South region · where time and money are going",
+    "scope": "38 jobs",
+    "scopeSub": "4 clusters · all categories · rolling 30 days",
+    "kpis": [
+      {
+        "label": "Cycle time PR→PO",
+        "value": "24.8 d",
+        "sub": "vs last month",
+        "note": "−1.6 d",
+        "noteTone": "green"
+      },
+      {
+        "label": "SLA compliance",
+        "value": "77%",
+        "sub": "this month",
+        "note": "14 breaches",
+        "noteTone": "red",
+        "progress": 77,
+        "progressColor": "#C98A00"
+      },
+      {
+        "label": "Open value",
+        "value": "₹42.6 Cr",
+        "sub": "38 jobs · 4 clusters"
+      },
+      {
+        "label": "Stuck beyond 5 d",
+        "value": "11",
+        "sub": "₹6.1 Cr held"
+      },
+      {
+        "label": "Recovered by agents",
+        "value": "₹1.24 Cr",
+        "sub": "90 d · 62% actioned"
+      }
+    ],
+    "actions": [
+      {
+        "id": "h1",
+        "icon": "clock",
+        "tone": "red",
+        "title": "11 documents stuck beyond 5 days",
+        "ref": "4 clusters",
+        "sub": "7 with approvers, 4 with vendors",
+        "age": "oldest 11 d",
+        "value": "₹6,10,00,000",
+        "cta": "See where",
+        "flag": "SLA breached",
+        "flagTone": "red",
+        "why": "Eleven documents have not moved in five days or more. Seven sit with approvers — five of those with one person, R. Krishnan, who has 11 approvals open.",
+        "offer": "I can send each approver one consolidated reminder listing only their own overdue items, and flag the two whose need-by dates fall inside a week.",
+        "done": "Reminders sent to four approvers through the API, itemised per person. The two need-by-critical documents are marked for escalation tomorrow if they have not moved."
+      },
+      {
+        "id": "h2",
+        "icon": "appr",
+        "tone": "red",
+        "title": "3 approvals waiting on you",
+        "ref": "Above the ₹50 L band",
+        "sub": "Chennai and Coimbatore clusters",
+        "age": "oldest 3 d",
+        "value": "₹1,12,40,000",
+        "cta": "Approve here",
+        "flag": "2 past SLA",
+        "flagTone": "red",
+        "why": "Three requests are in your band. Two have passed the two-day SLA, and one of those is the viaduct pour on LDM02128 with a 15 Sep need-by.",
+        "offer": "I can walk you through all three here — suggested decision, deviation from the ranking and the reason on record for each.",
+        "done": "Two approved and one returned with your note. All three are on the EIP workflow trace with you as the approver of record."
+      },
+      {
+        "id": "h3",
+        "icon": "jcr",
+        "tone": "amber",
+        "title": "JCR lapses in 6 days on 2 jobs",
+        "ref": "LDM03390 +1",
+        "sub": "all procurement halts on lapse",
+        "age": "6 d left",
+        "value": "₹3,40,00,000",
+        "cta": "Chase owners",
+        "flag": "Hard block",
+        "flagTone": "amber"
+      },
+      {
+        "id": "h4",
+        "icon": "rate",
+        "tone": "amber",
+        "title": "Cycle time up 3.1 d in Coimbatore",
+        "ref": "Cluster 4",
+        "sub": "allocation stage carries all of it",
+        "age": "30 d trend",
+        "value": "—",
+        "cta": "Ask Buddy"
+      },
+      {
+        "id": "h5",
+        "icon": "warn",
+        "tone": "blue",
+        "title": "₹1.42 Cr of agent value unactioned",
+        "ref": "18 insights",
+        "sub": "open longer than 7 days",
+        "age": "7 d+",
+        "value": "₹1,42,00,000",
+        "cta": "Review insights"
+      },
+      {
+        "id": "h6",
+        "icon": "money",
+        "tone": "blue",
+        "title": "2 budget top-ups pending Finance",
+        "ref": "LDM02128 +1",
+        "sub": "blocking 3 drafts",
+        "age": "4 d old",
+        "value": "₹38,90,000",
+        "cta": "Chase Finance"
+      }
+    ],
+    "insights": [
+      {
+        "priority": "P1",
+        "icon": "expiry",
+        "tone": "red",
+        "title": "₹38.4 L lapsed in 90 days",
+        "body": "Opportunities the agents raised that nobody acted on before they expired. Six of nine were near-expiry stock, in two clusters.",
+        "metricLabel": "Value lapsed",
+        "metricValue": "₹38,40,000",
+        "metricTone": "red",
+        "cta": "Review insights",
+        "intent": "res"
+      },
+      {
+        "priority": "P2",
+        "icon": "clock",
+        "tone": "amber",
+        "title": "Approval is 41% of the cycle",
+        "body": "9.8 of the 24.8-day PR→PO cycle sits in approval, and 62% of that is one level. A delegation for the ₹50 L–₹2 Cr band would cut it.",
+        "metricLabel": "Time recoverable",
+        "metricValue": "4.1 d",
+        "metricTone": "blue",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      },
+      {
+        "priority": "P3",
+        "icon": "money",
+        "tone": "blue",
+        "title": "₹2.9 Cr locked in stalled requests",
+        "body": "Fourteen requests older than 30 days with no vendor response. Short-closing them releases the budget inside this quarter.",
+        "metricLabel": "Budget recoverable",
+        "metricValue": "₹2,90,00,000",
+        "metricTone": "green",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      },
+      {
+        "priority": "P4",
+        "icon": "vendor",
+        "tone": "blue",
+        "title": "Vendor concentration in two clusters",
+        "body": "Three vendors carry 71% of awarded value in South, and two categories have a single empanelled supplier.",
+        "metricLabel": "Awarded value",
+        "metricValue": "₹28.4 Cr",
+        "metricTone": "blue",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      },
+      {
+        "priority": "P5",
+        "icon": "cons",
+        "tone": "blue",
+        "title": "Consolidation left on the table",
+        "body": "Eleven RFQs in 30 days that could have been four — same category, same window, different jobs.",
+        "metricLabel": "Potential saving",
+        "metricValue": "₹22,40,000",
+        "metricTone": "green",
+        "cta": "Ask Buddy",
+        "intent": "res"
+      }
+    ]
+  }
+}

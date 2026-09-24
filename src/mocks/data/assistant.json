@@ -1,0 +1,26 @@
+[
+  {
+    "id": "create-pr",
+    "label": "Create a PR",
+    "kind": "create",
+    "reply": "Sure — tell me the job code and the material, and I'll set up the draft. Excel sheets and HPC PDFs can be dropped in too; values from a file are confirmed with you before they commit."
+  },
+  {
+    "id": "pending-actions",
+    "label": "What are my pending actions?",
+    "kind": "info",
+    "reply": "Six items need you across four jobs — ₹1.09 Cr at stake. Two are past SLA."
+  },
+  {
+    "id": "track-pr",
+    "label": "Where is PRC/2026/0041872 pending?",
+    "kind": "info",
+    "reply": "With R. Krishnan at level 2 of 3, for 2 days 4 hours. SLA is 2 days, so it is breached by 4 hours."
+  },
+  {
+    "id": "show-drafts",
+    "label": "Show me my drafts",
+    "kind": "info",
+    "reply": "You have 5 drafts, ₹68.4 L in total. One is blocked on budget — PRC/2026/0041866, short by ₹26.4 L."
+  }
+]

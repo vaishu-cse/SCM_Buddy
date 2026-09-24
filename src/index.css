@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SCM Buddy theme.
+ * shadcn/ui components read the semantic tokens below (--primary, --border …).
+ * The L&T brand colours from the mockup are mapped onto them so every shadcn
+ * component picks up the brand automatically.
+ */
+:root {
+  --radius: 0.5rem;
+
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #134377;            /* L&T blue */
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #171717;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f5f5f5;
+  --accent-foreground: #171717;
+  --destructive: #c0392b;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #134377;
+
+  /* App-specific surfaces */
+  --brand-dark: #0f2c4d;
+  --brand-hover: #1a5694;
+  --sidebar: #f4f7fa;
+  --canvas: #f8fafb;
+  --segment: #eef1f4;
+
+  /* Status tones: bg / border / text / icon stroke */
+  --tone-red-bg: #fdeeec;   --tone-red-border: #f3c9c4;   --tone-red-fg: #a5322a;   --tone-red-icon: #c0392b;
+  --tone-amber-bg: #fffbe6; --tone-amber-border: #ffe480; --tone-amber-fg: #6b5200; --tone-amber-icon: #c98a00;
+  --tone-green-bg: #eaf5ef; --tone-green-border: #b9dcc8; --tone-green-fg: #1e7f4f; --tone-green-icon: #1e7f4f;
+  --tone-blue-bg: #eef4fa;  --tone-blue-border: #c3d8ec;  --tone-blue-fg: #134377;  --tone-blue-icon: #134377;
+  --tone-grey-bg: #f5f5f5;  --tone-grey-border: #e5e5e5;  --tone-grey-fg: #737373;  --tone-grey-icon: #737373;
+}
+
+.dark {
+  --background: #0b1420;
+  --foreground: #eef2f6;
+  --card: #101c2c;
+  --card-foreground: #eef2f6;
+  --popover: #101c2c;
+  --popover-foreground: #eef2f6;
+  --primary: #4d8fd6;
+  --primary-foreground: #0b1420;
+  --secondary: #16233634;
+  --secondary-foreground: #eef2f6;
+  --muted: #16233634;
+  --muted-foreground: #93a3b8;
+  --accent: #1a2a3e;
+  --accent-foreground: #eef2f6;
+  --destructive: #e5695c;
+  --border: #223349;
+  --input: #223349;
+  --ring: #4d8fd6;
+
+  --brand-dark: #0b1420;
+  --brand-hover: #4d8fd6;
+  --sidebar: #101c2c;
+  --canvas: #0b1420;
+  --segment: #16233b;
+
+  --tone-red-bg: #2a1614;    --tone-red-border: #4a2622;    --tone-red-fg: #f2a49c;    --tone-red-icon: #f2a49c;
+  --tone-amber-bg: #2a2310;  --tone-amber-border: #4a3c1a;  --tone-amber-fg: #f0cf7a;  --tone-amber-icon: #f0cf7a;
+  --tone-green-bg: #122a1c;  --tone-green-border: #1f4a30;  --tone-green-fg: #7fcba1;  --tone-green-icon: #7fcba1;
+  --tone-blue-bg: #13233a;   --tone-blue-border: #244268;   --tone-blue-fg: #8fb8e8;   --tone-blue-icon: #8fb8e8;
+  --tone-grey-bg: #1a2331;   --tone-grey-border: #2a374a;   --tone-grey-fg: #93a3b8;   --tone-grey-icon: #93a3b8;
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-hover: var(--brand-hover);
+  --color-sidebar: var(--sidebar);
+  --color-canvas: var(--canvas);
+  --color-segment: var(--segment);
+
+  --color-tone-red-bg: var(--tone-red-bg);
+  --color-tone-red-border: var(--tone-red-border);
+  --color-tone-red-fg: var(--tone-red-fg);
+  --color-tone-red-icon: var(--tone-red-icon);
+  --color-tone-amber-bg: var(--tone-amber-bg);
+  --color-tone-amber-border: var(--tone-amber-border);
+  --color-tone-amber-fg: var(--tone-amber-fg);
+  --color-tone-amber-icon: var(--tone-amber-icon);
+  --color-tone-green-bg: var(--tone-green-bg);
+  --color-tone-green-border: var(--tone-green-border);
+  --color-tone-green-fg: var(--tone-green-fg);
+  --color-tone-green-icon: var(--tone-green-icon);
+  --color-tone-blue-bg: var(--tone-blue-bg);
+  --color-tone-blue-border: var(--tone-blue-border);
+  --color-tone-blue-fg: var(--tone-blue-fg);
+  --color-tone-blue-icon: var(--tone-blue-icon);
+  --color-tone-grey-bg: var(--tone-grey-bg);
+  --color-tone-grey-border: var(--tone-grey-border);
+  --color-tone-grey-fg: var(--tone-grey-fg);
+  --color-tone-grey-icon: var(--tone-grey-icon);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 12.5px;
+    line-height: 1.45;
+    font-variant-numeric: tabular-nums;
+  }
+}
