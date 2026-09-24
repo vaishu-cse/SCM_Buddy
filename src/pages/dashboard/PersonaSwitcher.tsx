@@ -16,14 +16,14 @@ export function PersonaSwitcher({
 }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">PERSONA</span>
+      <span className="font-10 font-semibold tracking-[0.08em] text-muted-foreground">PERSONA</span>
       <div className="flex gap-0.5 rounded-lg bg-segment p-0.5">
         {OPTIONS.map((o) => (
           <button
             key={o.key}
             onClick={() => onChange(o.key)}
             className={cn(
-              "rounded-md px-2.5 py-1 text-[11.5px] font-semibold text-muted-foreground transition-colors",
+              "rounded-md px-2.5 py-1 font-12 font-semibold text-muted-foreground transition-colors",
               value === o.key && "bg-white text-foreground shadow-sm",
             )}
           >

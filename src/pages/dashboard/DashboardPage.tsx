@@ -68,7 +68,7 @@ export function DashboardPage() {
     return (
       <>
         <Breadcrumb page="Dashboard" />
-        <div className="py-10 text-center text-[12.5px] text-muted-foreground">Loading dashboard…</div>
+        <div className="py-10 text-center font-12 text-muted-foreground">Loading dashboard…</div>
       </>
     )
   }
@@ -82,15 +82,15 @@ export function DashboardPage() {
 
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
-          <h1 className="text-[16px] font-semibold text-foreground">{data.title}</h1>
+          <h1 className="font-16 font-semibold text-foreground">{data.title}</h1>
           <div className="mt-1 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-tone-blue-bg px-2 py-0.5 text-[11px] font-semibold text-tone-blue-fg">
+            <span className="rounded-full bg-tone-blue-bg px-2 py-0.5 font-12 font-semibold text-tone-blue-fg">
               {data.scope}
             </span>
-            <span className="text-[11.5px] text-muted-foreground">{data.scopeSub}</span>
+            <span className="font-12 text-muted-foreground">{data.scopeSub}</span>
           </div>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5 text-[11px] text-muted-foreground">
+        <div className="flex shrink-0 items-center gap-1.5 font-12 text-muted-foreground">
           <span className="size-1.5 rounded-full bg-tone-green-icon" />
           Updated just now
         </div>

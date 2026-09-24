@@ -76,10 +76,10 @@ function PanelHeader({ onNewChat, onHide }: { onNewChat: () => void; onHide: () 
         <span className="absolute -right-0.5 -bottom-0.5 size-2 rounded-full border-2 border-[#fafafa] bg-tone-green-icon" />
       </div>
       <div className="min-w-0 flex-1 leading-tight">
-        <div className="truncate text-[13px] font-semibold text-foreground">SCM Buddy</div>
-        <div className="truncate text-[10.5px] text-muted-foreground">Online · start and finish work here</div>
+        <div className="truncate font-14 font-semibold text-foreground">SCM Buddy</div>
+        <div className="truncate font-10 text-muted-foreground">Online · start and finish work here</div>
       </div>
-      <Button size="sm" onClick={onNewChat} className="h-7 gap-1 px-2.5 text-[11.5px]">
+      <Button size="sm" onClick={onNewChat} className="h-7 gap-1 px-2.5 font-12">
         <Plus className="size-3.5" />
         New
       </Button>
@@ -120,8 +120,8 @@ function EmptyState({
         <Bot className="size-6 text-primary" />
       </div>
       <div className="text-center">
-        <div className="text-[17px] font-semibold text-foreground">How can I help today?</div>
-        <div className="mt-1 text-[12.5px] text-muted-foreground">
+        <div className="font-18 font-semibold text-foreground">How can I help today?</div>
+        <div className="mt-1 font-12 text-muted-foreground">
           Ask about purchase requests, RFQs, approvals or orders.
         </div>
       </div>
@@ -130,7 +130,7 @@ function EmptyState({
           <button
             key={s.id}
             onClick={() => onSuggestion(s)}
-            className="flex items-center justify-between rounded-lg border border-border bg-white px-3.5 py-2.5 text-left text-[12.5px] font-medium text-foreground transition-colors hover:border-[#c3d8ec] hover:bg-tone-blue-bg"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-3.5 py-2.5 text-left font-12 font-medium text-foreground transition-colors hover:border-[#c3d8ec] hover:bg-tone-blue-bg"
           >
             {s.label}
             <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
@@ -162,7 +162,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
   if (message.from === "user") {
     return (
       <div className="flex justify-end">
-        <div className="max-w-[82%] rounded-xl bg-primary px-3 py-2.5 text-[12.5px] leading-[1.55] text-primary-foreground">
+        <div className="max-w-[82%] rounded-xl bg-primary px-3 py-2.5 font-12 leading-[1.55] text-primary-foreground">
           {message.text}
         </div>
       </div>
@@ -176,12 +176,12 @@ function MessageBubble({ message }: { message: ChatMessage }) {
       </span>
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         {message.text && (
-          <div className="rounded-xl bg-[#f3f4f6] px-3 py-2.5 text-[12.5px] leading-[1.55] text-[#171717]">
+          <div className="rounded-xl bg-[#f3f4f6] px-3 py-2.5 font-12 leading-[1.55] text-[#171717]">
             {message.text}
           </div>
         )}
         {message.doc && (
-          <div className="overflow-hidden rounded-lg border border-border bg-white text-[11.5px]">
+          <div className="overflow-hidden rounded-lg border border-border bg-white font-12">
             <DocRow label="Document" value={message.doc.ref} mono />
             <DocRow label="Scope" value={message.doc.scope} mono />
             <DocRow label="Value" value={message.doc.value} mono last />
@@ -194,7 +194,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
                 key={a.label}
                 onClick={a.onClick}
                 className={cn(
-                  "flex h-8 items-center gap-1 rounded-lg px-3 text-[11.5px] font-semibold transition-colors",
+                  "flex h-8 items-center gap-1 rounded-lg px-3 font-12 font-semibold transition-colors",
                   a.primary
                     ? "bg-primary text-primary-foreground hover:bg-brand-hover"
                     : "border border-border bg-white text-foreground hover:bg-muted",
@@ -250,7 +250,7 @@ function Composer({ onSubmit }: { onSubmit: (text: string) => void }) {
           }}
           rows={1}
           placeholder="Ask about PRs, RFQs, orders…"
-          className="max-h-24 flex-1 resize-none bg-transparent text-[12.5px] leading-[1.45] text-foreground outline-none placeholder:text-muted-foreground"
+          className="max-h-24 flex-1 resize-none bg-transparent font-12 leading-[1.45] text-foreground outline-none placeholder:text-muted-foreground"
         />
         <button
           onClick={submit}
@@ -261,7 +261,7 @@ function Composer({ onSubmit }: { onSubmit: (text: string) => void }) {
           <ArrowUp className="size-4" />
         </button>
       </div>
-      <p className="mt-2 flex items-start gap-1 text-[10px] leading-snug text-muted-foreground">
+      <p className="mt-2 flex items-start gap-1 font-10 leading-snug text-muted-foreground">
         <FileText className="mt-px size-3 shrink-0" />
         Excel sheets and HPC PDFs can be dropped here — values from a file are confirmed before they commit.
       </p>

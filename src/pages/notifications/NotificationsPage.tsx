@@ -75,7 +75,7 @@ export function NotificationsPage() {
     return (
       <>
         <Breadcrumb page="Notifications" />
-        <div className="py-10 text-center text-[12.5px] text-muted-foreground">Loading notifications…</div>
+        <div className="py-10 text-center font-12 text-muted-foreground">Loading notifications…</div>
       </>
     )
   }
@@ -119,7 +119,7 @@ export function NotificationsPage() {
               key={t.key}
               onClick={() => setTab(t.key)}
               className={cn(
-                "rounded-md px-2.5 py-1 text-[11.5px] font-semibold text-muted-foreground transition-colors",
+                "rounded-md px-2.5 py-1 font-12 font-semibold text-muted-foreground transition-colors",
                 tab === t.key && "bg-white text-foreground shadow-sm",
               )}
             >
@@ -127,7 +127,7 @@ export function NotificationsPage() {
             </button>
           ))}
         </div>
-        <div className="text-[11.5px] text-muted-foreground">
+        <div className="font-12 text-muted-foreground">
           <span className="font-semibold text-foreground">{filtered.length}</span>{" "}
           {filtered.length === 1 ? "notification" : "notifications"} · {scopeLabel}
         </div>
@@ -136,8 +136,8 @@ export function NotificationsPage() {
       {groups.length === 0 ? (
         <div className="flex flex-col items-center justify-center gap-2 rounded-[10px] border border-dashed border-border bg-white py-16 text-center">
           <Bell className="size-6 text-muted-foreground" />
-          <div className="text-[13px] font-medium text-foreground">No notifications</div>
-          <div className="max-w-sm text-[11.5px] text-muted-foreground">
+          <div className="font-14 font-medium text-foreground">No notifications</div>
+          <div className="max-w-sm font-12 text-muted-foreground">
             Nothing matches these filters. Try a different tab or job.
           </div>
         </div>
@@ -156,10 +156,10 @@ function NotificationGroup({ bucket, items }: { bucket: NotificationBucket; item
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between px-0.5">
-        <span className="text-[10.5px] font-semibold uppercase tracking-[0.06em] text-muted-foreground">
+        <span className="font-10 font-semibold uppercase tracking-[0.06em] text-muted-foreground">
           {bucket}
         </span>
-        <span className="text-[10.5px] text-muted-foreground">
+        <span className="font-10 text-muted-foreground">
           {items.length} {items.length === 1 ? "item" : "items"}
         </span>
       </div>
@@ -185,21 +185,21 @@ function NotificationRow({ item }: { item: NotificationItem }) {
         <Icon className={cn("size-3.5", tone.icon)} />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="truncate text-[11.5px] text-foreground">
+        <p className="truncate font-12 text-foreground">
           {item.pre}
           {item.ref && <span className="font-semibold">{item.ref}</span>}
           {item.mid}
           {item.strong && <span className="font-semibold">{item.strong}</span>}
           {item.post}
         </p>
-        <div className="mt-0.5 truncate text-[10.5px] text-muted-foreground">
+        <div className="mt-0.5 truncate font-10 text-muted-foreground">
           {item.when} · {item.job} · {item.kind}
         </div>
       </div>
       <Badge
         variant="outline"
         className={cn(
-          "shrink-0 rounded-[5px] text-[9.5px] font-semibold uppercase tracking-[0.03em]",
+          "shrink-0 rounded-[5px] font-10 font-semibold uppercase tracking-[0.03em]",
           item.who === "You"
             ? "border-tone-blue-border bg-tone-blue-bg text-tone-blue-fg"
             : "border-border bg-transparent text-muted-foreground",

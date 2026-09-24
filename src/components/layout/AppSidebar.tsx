@@ -26,7 +26,7 @@ export function AppSidebar({ expanded, insightsOpen }: { expanded: boolean; insi
         />
       </nav>
       {expanded && (
-        <div className="px-3 pb-3 text-[10.5px] leading-snug text-muted-foreground">
+        <div className="px-3 pb-3 font-10 leading-snug text-muted-foreground">
           SCM Buddy © 2026 L&T Construction. All Rights Reserved
         </div>
       )}
@@ -55,7 +55,7 @@ function SidebarLink({
       end={end}
       className={({ isActive }) =>
         cn(
-          "relative flex h-9 items-center gap-2.5 rounded-lg px-2.5 text-[12.5px] font-medium text-muted-foreground transition-colors hover:bg-white/60",
+          "relative flex h-9 items-center gap-2.5 rounded-lg px-2.5 font-12 font-medium text-muted-foreground transition-colors hover:bg-white/60",
           isActive && "bg-[#e2ebf5] text-primary hover:bg-[#e2ebf5]",
         )
       }
@@ -63,14 +63,14 @@ function SidebarLink({
       <span className="relative flex shrink-0 items-center justify-center">
         <Icon className="size-[18px]" />
         {!expanded && count ? (
-          <span className="absolute -right-1.5 -top-1.5 flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-primary px-0.5 text-[8.5px] font-bold text-primary-foreground">
+          <span className="absolute -right-1.5 -top-1.5 flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-primary px-0.5 font-8 font-bold text-primary-foreground">
             {count}
           </span>
         ) : null}
       </span>
       {expanded && <span className="flex-1 truncate">{label}</span>}
       {expanded && count ? (
-        <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[9.5px] font-bold text-primary-foreground">
+        <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 font-10 font-bold text-primary-foreground">
           {count}
         </span>
       ) : null}

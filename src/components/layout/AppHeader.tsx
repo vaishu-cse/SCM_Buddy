@@ -35,7 +35,7 @@ export function AppHeader({
       >
         <button
           onClick={onToggleSidebar}
-          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-dark text-[10px] font-bold tracking-tight text-white"
+          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-dark font-10 font-bold tracking-tight text-white"
           aria-label="Toggle sidebar"
         >
           L&amp;T
@@ -43,8 +43,8 @@ export function AppHeader({
         {sidebarExpanded && (
           <div className="flex min-w-0 flex-1 items-center justify-between gap-1">
             <div className="min-w-0 leading-tight">
-              <div className="truncate text-[14px] font-bold text-brand-dark">SCM Buddy</div>
-              <div className="truncate text-[10px] tracking-[0.08em] text-[#5a6b80]">SUPPLY CHAIN</div>
+              <div className="truncate font-14 font-bold text-brand-dark">SCM Buddy</div>
+              <div className="truncate font-10 tracking-[0.08em] text-[#5a6b80]">SUPPLY CHAIN</div>
             </div>
             <button
               onClick={onToggleSidebar}
@@ -65,7 +65,7 @@ export function AppHeader({
         >
           <Bell className="size-[18px]" />
           {notifications > 0 && (
-            <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C0392B] px-1 text-[9px] font-bold text-white">
+            <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C0392B] px-1 font-10 font-bold text-white">
               {notifications}
             </span>
           )}
@@ -86,18 +86,18 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
     <DropdownMenu>
       <DropdownMenuTrigger className="flex shrink-0 items-center gap-2 rounded-lg px-1.5 py-1 outline-none hover:bg-muted">
         <div className="hidden text-right leading-tight sm:block">
-          <div className="text-[12px] font-semibold text-foreground">{me?.name ?? "…"}</div>
-          <div className="text-[9.5px] text-muted-foreground">{me?.lastLogin ?? ""}</div>
+          <div className="font-14 font-semibold text-foreground">{me?.name ?? "…"}</div>
+          <div className="font-10 text-muted-foreground">{me?.lastLogin ?? ""}</div>
         </div>
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-primary-foreground">
+        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary font-12 font-bold text-primary-foreground">
           {me?.initials ?? ""}
         </div>
         <ChevronDown className="size-3.5 shrink-0 text-muted-foreground" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[232px]">
         <div className="px-2 py-1.5">
-          <div className="text-[12.5px] font-semibold text-foreground">{me?.name}</div>
-          <div className="text-[11px] text-muted-foreground">
+          <div className="font-14 font-semibold text-foreground">{me?.name}</div>
+          <div className="font-10 text-muted-foreground">
             PS {me?.psNo} · {personaRole}
           </div>
         </div>
@@ -105,12 +105,12 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
         <DropdownMenuItem>Profile</DropdownMenuItem>
         <DropdownMenuItem>Help</DropdownMenuItem>
         <div className="flex items-center justify-between px-2 py-1.5">
-          <span className="text-[12px] text-muted-foreground">Theme</span>
+          <span className="font-12 text-muted-foreground">Theme</span>
           <div className="flex gap-0.5 rounded-md bg-segment p-0.5">
             <button
               onClick={() => setTheme("light")}
               className={cn(
-                "flex items-center gap-1 rounded px-2 py-1 text-[11px] font-medium text-muted-foreground",
+                "flex items-center gap-1 rounded px-2 py-1 font-12 font-medium text-muted-foreground",
                 theme === "light" && "bg-white text-foreground shadow-sm",
               )}
             >
@@ -120,7 +120,7 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
             <button
               onClick={() => setTheme("dark")}
               className={cn(
-                "flex items-center gap-1 rounded px-2 py-1 text-[11px] font-medium text-muted-foreground",
+                "flex items-center gap-1 rounded px-2 py-1 font-12 font-medium text-muted-foreground",
                 theme === "dark" && "bg-white text-foreground shadow-sm",
               )}
             >
