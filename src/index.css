@@ -147,5 +147,30 @@
     font-size: 12.5px;
     line-height: 1.45;
     font-variant-numeric: tabular-nums;
+    /* Disabling slide back options */
+    overscroll-behavior-x: none;
+    scroll-behavior: smooth;
+  }
+
+  /* Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px !important;
+    height: 8px;
+    background-color: transparent !important;
+  }
+
+  ::-webkit-scrollbar * {
+    background: transparent !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border-radius: 8px !important;
+  }
+
+  :hover {
+    :hover::-webkit-scrollbar-thumb {
+      background: var(--border) !important;
+    }
   }
 }
