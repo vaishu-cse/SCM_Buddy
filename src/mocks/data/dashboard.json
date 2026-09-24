@@ -36,7 +36,7 @@
         "value": "1.4 d",
         "sub": "against a 2 d SLA",
         "progress": 72,
-        "progressColor": "#1E7F4F"
+        "progressTone": "green"
       }
     ],
     "actions": [
@@ -387,7 +387,7 @@
         "note": "14 breaches",
         "noteTone": "red",
         "progress": 77,
-        "progressColor": "#C98A00"
+        "progressTone": "amber"
       },
       {
         "label": "Open value",

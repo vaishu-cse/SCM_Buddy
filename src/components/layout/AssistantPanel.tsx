@@ -37,7 +37,7 @@ export function AssistantPanel({
     return (
       <div
         style={{ width: ASSISTANT_RAIL_WIDTH }}
-        className="flex shrink-0 flex-col items-center justify-end border-l border-border bg-[#fafafa] py-4"
+        className="flex shrink-0 flex-col items-center justify-end border-l border-border bg-sidebar py-4"
       >
         <button
           onClick={onShow}
@@ -53,7 +53,7 @@ export function AssistantPanel({
   return (
     <div
       style={{ width: ASSISTANT_PANEL_WIDTH }}
-      className="flex min-w-[340px] shrink-0 flex-col border-l border-border bg-[#fafafa]"
+      className="flex min-w-[340px] shrink-0 flex-col border-l border-border bg-sidebar"
     >
       <PanelHeader onNewChat={onNewChat} onHide={onHide} />
       <div className="flex-1 overflow-y-auto">
@@ -73,7 +73,7 @@ function PanelHeader({ onNewChat, onHide }: { onNewChat: () => void; onHide: () 
     <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-border px-3.5">
       <div className="relative flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
         <Bot className="size-[18px]" />
-        <span className="absolute -right-0.5 -bottom-0.5 size-2 rounded-full border-2 border-[#fafafa] bg-tone-green-icon" />
+        <span className="absolute -right-0.5 -bottom-0.5 size-2 rounded-full border-2 border-sidebar bg-tone-green-icon" />
       </div>
       <div className="min-w-0 flex-1 leading-tight">
         <div className="truncate font-14 font-semibold text-foreground">SCM Buddy</div>
@@ -116,7 +116,7 @@ function EmptyState({
 }) {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-4 px-6 py-8">
-      <div className="flex size-12 items-center justify-center rounded-xl border border-border bg-white">
+      <div className="flex size-12 items-center justify-center rounded-xl border border-border bg-card">
         <Bot className="size-6 text-primary" />
       </div>
       <div className="text-center">
@@ -130,7 +130,7 @@ function EmptyState({
           <button
             key={s.id}
             onClick={() => onSuggestion(s)}
-            className="flex items-center justify-between rounded-lg border border-border bg-white px-3.5 py-2.5 text-left font-12 font-medium text-foreground transition-colors hover:border-[#c3d8ec] hover:bg-tone-blue-bg"
+            className="flex items-center justify-between rounded-lg border border-border bg-card px-3.5 py-2.5 text-left font-12 font-medium text-foreground transition-colors hover:border-tone-blue-border hover:bg-tone-blue-bg"
           >
             {s.label}
             <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
@@ -176,12 +176,12 @@ function MessageBubble({ message }: { message: ChatMessage }) {
       </span>
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         {message.text && (
-          <div className="rounded-xl bg-[#f3f4f6] px-3 py-2.5 font-12 leading-[1.55] text-[#171717]">
+          <div className="rounded-xl bg-muted px-3 py-2.5 font-12 leading-[1.55] text-foreground">
             {message.text}
           </div>
         )}
         {message.doc && (
-          <div className="overflow-hidden rounded-lg border border-border bg-white font-12">
+          <div className="overflow-hidden rounded-lg border border-border bg-card font-12">
             <DocRow label="Document" value={message.doc.ref} mono />
             <DocRow label="Scope" value={message.doc.scope} mono />
             <DocRow label="Value" value={message.doc.value} mono last />
@@ -197,7 +197,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
                   "flex h-8 items-center gap-1 rounded-lg px-3 font-12 font-semibold transition-colors",
                   a.primary
                     ? "bg-primary text-primary-foreground hover:bg-brand-hover"
-                    : "border border-border bg-white text-foreground hover:bg-muted",
+                    : "border border-border bg-card text-foreground hover:bg-muted",
                 )}
               >
                 {a.label}
@@ -212,7 +212,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
 
 function DocRow({ label, value, mono, last }: { label: string; value: string; mono?: boolean; last?: boolean }) {
   return (
-    <div className={cn("flex items-center justify-between px-3 py-2", !last && "border-b border-[#f0f0f0]")}>
+    <div className={cn("flex items-center justify-between px-3 py-2", !last && "border-b border-border")}>
       <span className="text-muted-foreground">{label}</span>
       <span className={cn("font-semibold text-foreground", mono && "font-mono")}>{value}</span>
     </div>
@@ -231,7 +231,7 @@ function Composer({ onSubmit }: { onSubmit: (text: string) => void }) {
 
   return (
     <div className="shrink-0 border-t border-border p-3">
-      <div className="flex items-end gap-2 rounded-xl border border-border bg-white px-2.5 py-2">
+      <div className="flex items-end gap-2 rounded-xl border border-border bg-card px-2.5 py-2">
         <button
           type="button"
           className="flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-muted"

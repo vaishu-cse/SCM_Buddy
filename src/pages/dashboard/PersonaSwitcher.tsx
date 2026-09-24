@@ -24,7 +24,7 @@ export function PersonaSwitcher({
             onClick={() => onChange(o.key)}
             className={cn(
               "rounded-md px-2.5 py-1 font-12 font-semibold text-muted-foreground transition-colors",
-              value === o.key && "bg-white text-foreground shadow-sm",
+              value === o.key && "bg-card text-foreground shadow-sm",
             )}
           >
             {o.label}

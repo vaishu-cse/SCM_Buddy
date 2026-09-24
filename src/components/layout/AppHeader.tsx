@@ -28,7 +28,7 @@ export function AppHeader({
   const navigate = useNavigate()
 
   return (
-    <header className="flex h-14 shrink-0 border-b border-border bg-white">
+    <header className="flex h-14 shrink-0 border-b border-border bg-card">
       <div
         style={{ width: sidebarWidth(sidebarExpanded) }}
         className="flex shrink-0 items-center gap-2 border-r border-border bg-sidebar px-3 transition-[width] duration-150"
@@ -44,11 +44,11 @@ export function AppHeader({
           <div className="flex min-w-0 flex-1 items-center justify-between gap-1">
             <div className="min-w-0 leading-tight">
               <div className="truncate font-14 font-bold text-brand-dark">SCM Buddy</div>
-              <div className="truncate font-10 tracking-[0.08em] text-[#5a6b80]">SUPPLY CHAIN</div>
+              <div className="truncate font-10 tracking-[0.08em] text-muted-foreground">SUPPLY CHAIN</div>
             </div>
             <button
               onClick={onToggleSidebar}
-              className="flex size-6 shrink-0 items-center justify-center rounded-md text-[#5a6b80] hover:bg-white/70"
+              className="flex size-6 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
               aria-label="Collapse sidebar"
             >
               <PanelLeftClose className="size-3.5" />
@@ -65,7 +65,7 @@ export function AppHeader({
         >
           <Bell className="size-[18px]" />
           {notifications > 0 && (
-            <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C0392B] px-1 font-10 font-bold text-white">
+            <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 font-10 font-bold text-white">
               {notifications}
             </span>
           )}
@@ -111,7 +111,7 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
               onClick={() => setTheme("light")}
               className={cn(
                 "flex items-center gap-1 rounded px-2 py-1 font-12 font-medium text-muted-foreground",
-                theme === "light" && "bg-white text-foreground shadow-sm",
+                theme === "light" && "bg-card text-foreground shadow-sm",
               )}
             >
               <Sun className="size-3" />
@@ -121,7 +121,7 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
               onClick={() => setTheme("dark")}
               className={cn(
                 "flex items-center gap-1 rounded px-2 py-1 font-12 font-medium text-muted-foreground",
-                theme === "dark" && "bg-white text-foreground shadow-sm",
+                theme === "dark" && "bg-card text-foreground shadow-sm",
               )}
             >
               <Moon className="size-3" />

@@ -120,7 +120,7 @@ export function NotificationsPage() {
               onClick={() => setTab(t.key)}
               className={cn(
                 "rounded-md px-2.5 py-1 font-12 font-semibold text-muted-foreground transition-colors",
-                tab === t.key && "bg-white text-foreground shadow-sm",
+                tab === t.key && "bg-card text-foreground shadow-sm",
               )}
             >
               {t.label}
@@ -134,7 +134,7 @@ export function NotificationsPage() {
       </div>
 
       {groups.length === 0 ? (
-        <div className="flex flex-col items-center justify-center gap-2 rounded-[10px] border border-dashed border-border bg-white py-16 text-center">
+        <div className="flex flex-col items-center justify-center gap-2 rounded-[10px] border border-dashed border-border bg-card py-16 text-center">
           <Bell className="size-6 text-muted-foreground" />
           <div className="font-14 font-medium text-foreground">No notifications</div>
           <div className="max-w-sm font-12 text-muted-foreground">
@@ -163,7 +163,7 @@ function NotificationGroup({ bucket, items }: { bucket: NotificationBucket; item
           {items.length} {items.length === 1 ? "item" : "items"}
         </span>
       </div>
-      <div className="rounded-[10px] border border-border bg-white shadow-[0_2px_8px_-2px_rgba(15,44,77,.10),0_1px_2px_rgba(15,44,77,.05)]">
+      <div className="rounded-[10px] border border-border bg-card shadow-[0_2px_8px_-2px_rgba(15,44,77,.10),0_1px_2px_rgba(15,44,77,.05)]">
         {items.map((item, i) => (
           <div key={item.id}>
             <NotificationRow item={item} />

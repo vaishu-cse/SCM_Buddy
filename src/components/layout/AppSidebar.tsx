@@ -55,8 +55,8 @@ function SidebarLink({
       end={end}
       className={({ isActive }) =>
         cn(
-          "relative flex h-9 items-center gap-2.5 rounded-lg px-2.5 font-12 font-medium text-muted-foreground transition-colors hover:bg-white/60",
-          isActive && "bg-[#e2ebf5] text-primary hover:bg-[#e2ebf5]",
+          "relative flex h-9 items-center gap-2.5 rounded-lg px-2.5 font-12 font-medium text-muted-foreground transition-colors hover:bg-accent",
+          isActive && "bg-tone-blue-bg text-tone-blue-fg hover:bg-tone-blue-bg",
         )
       }
     >

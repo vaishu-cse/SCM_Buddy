@@ -7,7 +7,7 @@ export interface Kpi {
   note?: string
   noteTone?: Tone
   progress?: number
-  progressColor?: string
+  progressTone?: Tone
 }
 
 export interface ActionItem {
