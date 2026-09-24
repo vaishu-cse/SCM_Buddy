@@ -1,5 +1,6 @@
 import type { AssistantSuggestion, Me, NavCounts } from "@/types/api"
 import type { InsightLedgerItem, PersonaDashboard, PersonaKey } from "@/types/dashboard"
+import type { NotificationItem } from "@/types/notifications"
 
 async function json<T>(res: Response): Promise<T> {
   if (!res.ok) throw new Error(`Request failed: ${res.status} ${res.statusText}`)
@@ -28,4 +29,12 @@ export function getAssistantSuggestions(): Promise<AssistantSuggestion[]> {
 
 export function markActionDone(id: string): Promise<{ ok: boolean }> {
   return fetch(`/api/actions/${id}/done`, { method: "POST" }).then((r) => json<{ ok: boolean }>(r))
+}
+
+export function getNotifications(): Promise<NotificationItem[]> {
+  return fetch("/api/notifications").then((r) => json<NotificationItem[]>(r))
+}
+
+export function markNotificationsRead(): Promise<{ ok: boolean }> {
+  return fetch("/api/notifications/read", { method: "POST" }).then((r) => json<{ ok: boolean }>(r))
 }

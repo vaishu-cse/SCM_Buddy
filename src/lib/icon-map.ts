@@ -12,6 +12,7 @@ import {
   Hourglass,
   ListChecks,
   Mail,
+  MinusCircle,
   Package,
   RotateCcw,
   Send,
@@ -47,6 +48,7 @@ const ICONS: Record<string, LucideIcon> = {
   x: X,
   docplus: FilePlus,
   tri: Triangle,
+  minus: MinusCircle,
 }
 
 export function getIcon(name: string): LucideIcon {

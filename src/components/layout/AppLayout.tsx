@@ -34,6 +34,10 @@ export function AppLayout() {
     setMessages([])
   }
 
+  function markNotificationsRead() {
+    setNavCounts((prev) => (prev ? { ...prev, notifications: 0 } : prev))
+  }
+
   function clearPendingActions() {
     setMessages((prev) => prev.map((m) => ({ ...m, actions: undefined })))
   }
@@ -119,7 +123,7 @@ export function AppLayout() {
               className="mx-auto flex flex-col gap-[clamp(8px,1.4vh,18px)] py-3"
               style={{ paddingInline: "clamp(12px,1.6vw,28px)" }}
             >
-              <Outlet context={{ controller, setPersonaRole } satisfies OutletContext} />
+              <Outlet context={{ controller, setPersonaRole, markNotificationsRead } satisfies OutletContext} />
             </div>
           </main>
         </div>
@@ -141,4 +145,5 @@ export function AppLayout() {
 export interface OutletContext {
   controller: AssistantController
   setPersonaRole: (role: string) => void
+  markNotificationsRead: () => void
 }
