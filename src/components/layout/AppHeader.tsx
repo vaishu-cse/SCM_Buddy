@@ -28,7 +28,7 @@ export function AppHeader({
   const navigate = useNavigate()
 
   return (
-    <header className="flex h-[46px] shrink-0 border-b border-border bg-white">
+    <header className="flex h-14 shrink-0 border-b border-border bg-white">
       <div
         style={{ width: sidebarWidth(sidebarExpanded) }}
         className="flex shrink-0 items-center gap-2 border-r border-border bg-sidebar px-3 transition-[width] duration-150"
