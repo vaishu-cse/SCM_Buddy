@@ -1,0 +1,17 @@
+[
+  { "id": "n1", "icon": "check", "tone": "green", "ref": "PRC/2026/0041872", "mid": " approved by ", "strong": "R. Krishnan", "when": "14 min ago", "job": "LDM02128", "kind": "Approval", "who": "Update", "bucket": "Today" },
+  { "id": "n2", "icon": "card", "tone": "blue", "pre": "Budget now available on ", "ref": "LDM02128", "when": "1 hr ago", "job": "LDM02128", "kind": "Budget", "who": "Update", "bucket": "Today" },
+  { "id": "n3", "icon": "doc", "tone": "blue", "strong": "Sunrise Steel Traders", "post": " submitted a quote", "when": "2 hr ago", "job": "LDM02128", "kind": "Vendor quote", "who": "Update", "bucket": "Today" },
+  { "id": "n4", "icon": "person", "tone": "grey", "ref": "PRC/2026/0041790", "mid": " allocated to Cluster Buyer", "when": "Yesterday", "job": "LDM04471", "kind": "Allocation", "who": "Update", "bucket": "Yesterday" },
+  { "id": "n5", "icon": "send", "tone": "blue", "ref": "RFQ/2026/0009341", "mid": " issued to 5 vendors", "when": "Yesterday", "job": "LDM02128", "kind": "RFQ", "who": "Update", "bucket": "Yesterday" },
+  { "id": "n6", "icon": "x", "tone": "red", "ref": "RFQ/2026/0009288", "mid": " declined by ", "strong": "Deccan Cement", "when": "Yesterday", "job": "LDM04471", "kind": "Vendor", "who": "Update", "bucket": "Yesterday" },
+  { "id": "n7", "icon": "check", "tone": "green", "pre": "MRN posted against ", "ref": "PO/2026/0018781", "when": "Yesterday", "job": "LDM03390", "kind": "Approval", "who": "Update", "bucket": "Yesterday" },
+  { "id": "n8", "icon": "card", "tone": "blue", "pre": "Delivery date revised by vendor on ", "ref": "PO/2026/0028104", "when": "2 days ago", "job": "LDM05114", "kind": "Budget", "who": "Update", "bucket": "Earlier this week" },
+  { "id": "n9", "icon": "check", "tone": "green", "pre": "You approved ", "ref": "PRC/2026/0041815", "when": "2 hr ago", "job": "LDM02128", "kind": "Approval", "who": "You", "bucket": "Today" },
+  { "id": "n10", "icon": "send", "tone": "blue", "pre": "You issued ", "ref": "RFQ/2026/0009341", "mid": " to 5 vendors", "when": "Yesterday", "job": "LDM02128", "kind": "RFQ", "who": "You", "bucket": "Yesterday" },
+  { "id": "n11", "icon": "docplus", "tone": "grey", "pre": "You created a draft PR — TMT couplers", "when": "Yesterday", "job": "LDM02128", "kind": "Draft", "who": "You", "bucket": "Yesterday" },
+  { "id": "n12", "icon": "person", "tone": "grey", "pre": "You allocated ", "ref": "PRC/2026/0041790", "mid": " to Cluster Buyer", "when": "2 days ago", "job": "LDM04471", "kind": "Allocation", "who": "You", "bucket": "Earlier this week" },
+  { "id": "n13", "icon": "tri", "tone": "amber", "pre": "You declined surplus on ", "ref": "PRC/2026/0041872", "when": "2 days ago", "job": "LDM02128", "kind": "Advisory", "who": "You", "bucket": "Earlier this week" },
+  { "id": "n14", "icon": "minus", "tone": "grey", "pre": "You short-closed ", "ref": "PRC/2026/0039660", "when": "3 days ago", "job": "LDM03390", "kind": "Short-close", "who": "You", "bucket": "Earlier this week" },
+  { "id": "n15", "icon": "check", "tone": "green", "pre": "You accepted the revised date on ", "ref": "PO/2026/0028104", "when": "3 days ago", "job": "LDM05114", "kind": "Approval", "who": "You", "bucket": "Earlier this week" }
+]
