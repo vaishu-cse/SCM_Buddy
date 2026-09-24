@@ -84,7 +84,7 @@ export function DashboardPage() {
         <div>
           <h1 className="text-[16px] font-semibold text-foreground">{data.title}</h1>
           <div className="mt-1 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-tone-blue-bg px-2 py-0.5 font-mono text-[11px] font-semibold text-tone-blue-fg">
+            <span className="rounded-full bg-tone-blue-bg px-2 py-0.5 text-[11px] font-semibold text-tone-blue-fg">
               {data.scope}
             </span>
             <span className="text-[11.5px] text-muted-foreground">{data.scopeSub}</span>

@@ -89,7 +89,7 @@ function InsightCard({
       <p className="text-[11.5px] leading-[1.5] text-muted-foreground">{insight.body}</p>
       <div className="mt-auto flex items-baseline gap-1.5">
         <span className="text-[10.5px] text-muted-foreground">{insight.metricLabel}</span>
-        <span className={`font-mono text-[12px] font-semibold ${metricTone.fg}`}>{insight.metricValue}</span>
+        <span className={`text-[12px] font-semibold ${metricTone.fg}`}>{insight.metricValue}</span>
       </div>
       <button
         onClick={() => onCta(insight)}
