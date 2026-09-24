@@ -113,7 +113,7 @@ function ActionRow({
             {item.flag}
           </span>
         )}
-        <span className="font-mono text-[11.5px] font-semibold text-primary">{item.value}</span>
+        <span className="text-[11.5px] font-semibold text-primary">{item.value}</span>
         <button
           onClick={() => onResolve(item)}
           className="whitespace-nowrap rounded-[7px] bg-primary px-2.5 py-1.5 text-[11px] font-semibold text-primary-foreground hover:bg-brand-hover"
