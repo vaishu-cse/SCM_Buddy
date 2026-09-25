@@ -1,4 +1,4 @@
-import { Bell, ChevronDown, Moon, PanelLeftClose, Sun } from "lucide-react"
+import { Bell, ChevronDown, LogOut, Moon, PanelLeftClose, Sun } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import {
   DropdownMenu,
@@ -84,7 +84,7 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex shrink-0 items-center gap-2 rounded-lg px-1.5 py-1 outline-none hover:bg-muted">
+      <DropdownMenuTrigger className="group flex shrink-0 items-center gap-2 rounded-lg px-1.5 py-1 outline-none cursor-pointer">
         <div className="hidden text-right leading-tight sm:block">
           <div className="font-14 font-semibold text-foreground">{me?.name ?? "…"}</div>
           <div className="font-10 text-muted-foreground">{me?.lastLogin ?? ""}</div>
@@ -92,7 +92,7 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
         <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary font-12 font-bold text-primary-foreground">
           {me?.initials ?? ""}
         </div>
-        <ChevronDown className="size-3.5 shrink-0 text-muted-foreground" />
+        <ChevronDown className="size-3.5 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[232px]">
         <div className="px-2 py-1.5">
@@ -102,8 +102,9 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Help</DropdownMenuItem>
+        <DropdownMenuItem className="py-2">Profile</DropdownMenuItem>
+        <DropdownMenuItem className="py-2">Help</DropdownMenuItem>
+        <DropdownMenuSeparator />
         <div className="flex items-center justify-between px-2 py-1.5">
           <span className="font-12 text-muted-foreground">Theme</span>
           <div className="flex gap-0.5 rounded-md bg-segment p-0.5">
@@ -130,7 +131,10 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive">Sign out</DropdownMenuItem>
+        <DropdownMenuItem variant="destructive">
+          <LogOut className="size-3.5" />
+          Log out
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
