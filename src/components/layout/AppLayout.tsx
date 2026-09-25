@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
 import { fallbackDone, fallbackOffer, fallbackWhy } from "@/lib/assistant-fallback"
-import { getAssistantSuggestions, getMe, getNavCounts } from "@/lib/api"
+import { getAssistantSuggestions, getChatHistory, getMe, getNavCounts } from "@/lib/api"
 import {
   isCreatePrIntent,
   matchMaterial,
@@ -9,7 +9,7 @@ import {
   PR_MATERIALS,
   type PrMaterial,
 } from "@/lib/pr-flow-data"
-import type { AssistantSuggestion, Me, NavCounts } from "@/types/api"
+import type { AssistantSuggestion, HistoryItem, Me, NavCounts } from "@/types/api"
 import { AppHeader } from "./AppHeader"
 import { AppSidebar } from "./AppSidebar"
 import { AssistantPanel } from "./AssistantPanel"
@@ -40,11 +40,13 @@ export function AppLayout() {
   const [me, setMe] = useState<Me | null>(null)
   const [navCounts, setNavCounts] = useState<NavCounts | null>(null)
   const [suggestions, setSuggestions] = useState<AssistantSuggestion[]>([])
+  const [history, setHistory] = useState<HistoryItem[]>([])
 
   useEffect(() => {
     getMe().then(setMe)
     getNavCounts().then(setNavCounts)
     getAssistantSuggestions().then(setSuggestions)
+    getChatHistory().then(setHistory)
   }, [])
 
   function resetThread() {
@@ -347,6 +349,22 @@ export function AppLayout() {
     },
   }
 
+  function resumeHistoryItem(item: HistoryItem) {
+    setAssistantHidden(false)
+    clearPrFlow()
+    controller.openResolve({
+      kind: "insight",
+      scope: item.job,
+      title: item.title,
+      ref: item.ref,
+      why: item.snippet,
+      offer:
+        "Picking that thread back up. I still hold the working state — say the word and I'll carry on from where it stopped.",
+      cta: "Continue here",
+      done: "Carried on. Anything that lands in EIP goes through the API once you confirm it.",
+    })
+  }
+
   function handleSuggestion(s: AssistantSuggestion) {
     if (s.id === "create-pr") {
       startCreatePr(s.label)
@@ -442,6 +460,8 @@ export function AppLayout() {
         onSuggestion={handleSuggestion}
         onComposerSubmit={handleComposerSubmit}
         draftDoc={draftDoc}
+        history={history}
+        onResumeHistory={resumeHistoryItem}
       />
     </div>
   )

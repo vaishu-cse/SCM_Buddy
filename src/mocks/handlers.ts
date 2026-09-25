@@ -6,6 +6,7 @@ import navCounts from "./data/nav-counts.json"
 import assistantSuggestions from "./data/assistant.json"
 import insights from "./data/insights.json"
 import notifications from "./data/notifications.json"
+import history from "./data/history.json"
 
 const dashboardData = dashboard as DashboardData
 
@@ -25,6 +26,8 @@ export const handlers = [
   http.get("/api/assistant/suggestions", () => HttpResponse.json(assistantSuggestions)),
 
   http.get("/api/notifications", () => HttpResponse.json(notifications)),
+
+  http.get("/api/history", () => HttpResponse.json(history)),
 
   http.post("/api/actions/:id/done", () => HttpResponse.json({ ok: true })),
 

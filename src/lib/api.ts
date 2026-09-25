@@ -1,4 +1,4 @@
-import type { AssistantSuggestion, Me, NavCounts } from "@/types/api"
+import type { AssistantSuggestion, HistoryItem, Me, NavCounts } from "@/types/api"
 import type { InsightLedgerItem, PersonaDashboard, PersonaKey } from "@/types/dashboard"
 import type { NotificationItem } from "@/types/notifications"
 
@@ -37,4 +37,8 @@ export function getNotifications(): Promise<NotificationItem[]> {
 
 export function markNotificationsRead(): Promise<{ ok: boolean }> {
   return fetch("/api/notifications/read", { method: "POST" }).then((r) => json<{ ok: boolean }>(r))
+}
+
+export function getChatHistory(): Promise<HistoryItem[]> {
+  return fetch("/api/history").then((r) => json<HistoryItem[]>(r))
 }

@@ -16,3 +16,14 @@ export interface AssistantSuggestion {
   kind: "create" | "info"
   reply: string
 }
+
+export interface HistoryItem {
+  id: string
+  day: string
+  title: string
+  snippet: string
+  time: string
+  messageCount: string
+  ref: string
+  job: string
+}

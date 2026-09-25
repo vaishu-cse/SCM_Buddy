@@ -1,0 +1,102 @@
+[
+  {
+    "id": "h1",
+    "day": "Today",
+    "title": "Create a PR",
+    "snippet": "Transfer 38 MT from LDM03390, then buy the balance 12 MT fresh",
+    "time": "10:41 AM",
+    "messageCount": "14 messages",
+    "ref": "PRC/2026/0041872",
+    "job": "LDM02128"
+  },
+  {
+    "id": "h2",
+    "day": "Today",
+    "title": "Where is PRC/2026/0041872 pending?",
+    "snippet": "Held at Head–SCM since 27 Aug · budget insufficient for Steel & Rebar",
+    "time": "09:12 AM",
+    "messageCount": "6 messages",
+    "ref": "PRC/2026/0041872",
+    "job": "LDM02128"
+  },
+  {
+    "id": "h3",
+    "day": "Yesterday",
+    "title": "Why is the 16mm rate 4.2% higher?",
+    "snippet": "₹52,400/MT against ₹50,290/MT on 14 Aug · vendor cited coil cost",
+    "time": "04:38 PM",
+    "messageCount": "9 messages",
+    "ref": "TMT Bar Fe500D 16mm",
+    "job": "LDM02128"
+  },
+  {
+    "id": "h4",
+    "day": "Yesterday",
+    "title": "Chase the vendors who have not quoted",
+    "snippet": "Three of four invited · RFQ closes in 2 days · reminders drafted, not sent",
+    "time": "02:05 PM",
+    "messageCount": "7 messages",
+    "ref": "RFQ/2026/0009371",
+    "job": "LDM04471"
+  },
+  {
+    "id": "h5",
+    "day": "Yesterday",
+    "title": "Short-close the steel angles balance",
+    "snippet": "28 MT dropped, receipt closed at 12 MT · buyer reason recorded",
+    "time": "11:20 AM",
+    "messageCount": "5 messages",
+    "ref": "PO/2026/0018690",
+    "job": "LDM03390"
+  },
+  {
+    "id": "h6",
+    "day": "29 Aug",
+    "title": "Compare landed cost on the 12mm TMT quotes",
+    "snippet": "Four sources on 50 MT · nearest hub cheaper by ₹640/MT once freight is counted",
+    "time": "05:14 PM",
+    "messageCount": "12 messages",
+    "ref": "RFQ/2026/0009341",
+    "job": "LDM02128"
+  },
+  {
+    "id": "h7",
+    "day": "29 Aug",
+    "title": "Who approves an override above ₹50 lakh?",
+    "snippet": "Head–SCM, then CFO above ₹2 Cr · no delegation set for this quarter",
+    "time": "03:47 PM",
+    "messageCount": "4 messages",
+    "ref": "Governance",
+    "job": "LDM02128"
+  },
+  {
+    "id": "h8",
+    "day": "29 Aug",
+    "title": "Allocate the pending TMT requests",
+    "snippet": "Three requests consolidated into one RFQ · 1.42× volume on the same rate",
+    "time": "10:02 AM",
+    "messageCount": "8 messages",
+    "ref": "LDM03390",
+    "job": "LDM03390"
+  },
+  {
+    "id": "h9",
+    "day": "28 Aug",
+    "title": "Amend PO/2026/0018842 quantity",
+    "snippet": "60 MT to 78 MT · rate revision still awaiting Head–SCM",
+    "time": "04:22 PM",
+    "messageCount": "11 messages",
+    "ref": "PO/2026/0018842",
+    "job": "LDM02128"
+  },
+  {
+    "id": "h10",
+    "day": "28 Aug",
+    "title": "Draft the TCD for the TMT award",
+    "snippet": "Sunrise Steel Traders · 60 MT of 16mm and 20mm · L1 not recommended, deviation noted",
+    "time": "01:15 PM",
+    "messageCount": "6 messages",
+    "ref": "RFQ/2026/0009266",
+    "job": "LDM02128"
+  }
+]
