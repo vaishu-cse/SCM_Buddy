@@ -74,7 +74,7 @@ export function NotificationsPage() {
   if (!items) {
     return (
       <>
-        <Breadcrumb page="Notifications" />
+        <Breadcrumb page="Notifications" parentPage="Dashboard" />
         <div className="py-10 text-center font-12 text-muted-foreground">Loading notifications…</div>
       </>
     )
@@ -85,7 +85,7 @@ export function NotificationsPage() {
   return (
     <>
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <Breadcrumb page="Notifications" />
+        <Breadcrumb page="Notifications" parentPage="Dashboard" />
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={handleMarkAllRead} disabled={markedRead}>
             <Check className="size-3.5" />
