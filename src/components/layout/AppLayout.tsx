@@ -383,8 +383,22 @@ export function AppLayout() {
     ])
   }
 
-  function handleComposerSubmit(text: string) {
+  function handleComposerSubmit(text: string, fileNames?: string[]) {
     setAssistantHidden(false)
+
+    if (fileNames && fileNames.length > 0) {
+      const attachmentLine = `📎 ${fileNames.join(", ")}`
+      setMessages((prev) => [
+        ...prev,
+        { id: nextId(), from: "user", text: text ? `${text}\n${attachmentLine}` : attachmentLine },
+        {
+          id: nextId(),
+          from: "buddy",
+          text: `Got it — I'll pull values from ${fileNames.length > 1 ? "these files" : fileNames[0]} and confirm anything I use before it commits to the draft.`,
+        },
+      ])
+      return
+    }
 
     if (prStage === "awaiting-material") {
       const material = matchMaterial(text)
