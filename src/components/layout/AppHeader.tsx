@@ -102,8 +102,8 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="py-2">Profile</DropdownMenuItem>
-        <DropdownMenuItem className="py-2">Help</DropdownMenuItem>
+        <DropdownMenuItem className="py-1.5">Profile</DropdownMenuItem>
+        <DropdownMenuItem className="py-1.5">Help</DropdownMenuItem>
         <DropdownMenuSeparator />
         <div className="flex items-center justify-between px-2 py-1.5">
           <span className="font-12 text-muted-foreground">Theme</span>
@@ -131,7 +131,7 @@ function ProfileMenu({ me, personaRole }: { me: Me | null; personaRole: string }
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive">
+        <DropdownMenuItem variant="destructive" className="py-1.5">
           <LogOut className="size-3.5" />
           Log out
         </DropdownMenuItem>
