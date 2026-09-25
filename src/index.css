@@ -173,6 +173,22 @@
       background: var(--border) !important;
     }
   }
+
+  /* Every actionable element gets a pointer cursor; menu items keep the
+     native default arrow, matching OS menu conventions. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  a[href],
+  label[for],
+  select,
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
 }
 
 /* font size */
